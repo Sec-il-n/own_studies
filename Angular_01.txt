@@ -1,0 +1,24 @@
+コンポーネント
+・UIの機能を再利用できる
+・ビューと呼ばれる画面のパッチを制御
+
+app-root
+app-list  HeroListComponent  heroesプロパティ ...ヒーローの配列を保持する
+
+DI（外部データの注入）
+->
+selectHero()メソッドがselectedHeroプロパティを設定
+->
+コンポーネントがサービスからプロパティを取得する＝＝コンストラクターのTypeScriptパラメータプロパティ
+
+Angulerのライフサイクル
+ユーザーがアプリケーションを移動するときにコンポーネントを作成、更新、および破棄する
+  ライフサイクルフック
+  ngOnInit()などを使用してアクションを実行
+
+コンポーネントメタデータ
+https://angular.keicode.com/basics/metadata.php
+
+「TypeScript のクラス」
+←メタデータをアタッチ　＝@Component
+→「Angular モジュール」とか「Angular コンポーネント」になる　＝追加情報や設定情報が追加される
