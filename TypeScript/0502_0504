@@ -1,0 +1,36 @@
+import { Directive } from '@angular/core'
+ElementRef(field of constructor)
+
+API > angular/core > Directive
+                      component
+                     subclass↑
+
+「@」ライブラリを読み込む
+各モジュールはType（このtype(型)クラス、関数、オブジェクトetc..となる）をexport
+→import して使用する
+
+
+--------------------------
+Angularのモジュール定義
+
+コンポーネント
+細分化し再利用可能にする
+
+      APP / Root
+
+モジュール
+同じ役割でまとめられたコンポーネントのグループ
+モジュール同士にはリレーションがある
+
+1. コンポーネントの作成
+2. moduleの登録
+3. elementをHTMLに追加
+
+-----------------------
+https://qiita.com/mii-chan/items/e0095da0a150e7b797c2 環境構築
+AngularEssentials(VScode)
+https://www.tohoho-web.com/ex/angular.html#install
+https://angular.jp/tutorial/toh-pt0 [公式]
+$ npm insrall -g @angular/cli
+$ ng new my-qpp
+$ ng serve

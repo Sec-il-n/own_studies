@@ -1,0 +1,68 @@
+class Point {
+  x: number;//「;」でフィールドに
+  y: number;
+
+  drow: () {
+    console.log('x: '+ this.x + 'y: '+ this.y);//Ⓜ︎this
+  }
+//Ⓜ︎インスタンス
+  let point = new Point();
+  point.x = 1;
+  point.y = 2;
+
+  point.draw();
+}
+
+???
+x:
+Property 'x' does not exist on type 'Point'
+x -> any
+なぜか消えた
+
+Point:
+Duplicate identifier(ts2300)
+ set the compiler target version to ES6
+??VSコードで同時に開いた場合に出る
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝tryed but keep going
+      参考：
+      https://stackoverflow.com/questions/58485673/vs2019-error-ts2300-duplicate-identifier-iteratorresult
+
+    tscのlibオプションをes5やes6にする
+    $ tsc --lib es5 main.ts　→　TS2584
+
+  参考：
+  https://qiita.com/hitochan777/items/dcb38a4cf75d2b8d39c4#%E5%AF%BE%E7%AD%96
+
+ $ npm install @types/node@8.10.52
+ $ ng build
+
+-----------------------------------
+コンストラクター
+
+オプションパラメータ　呼び出し元がその引数を提供しない場合に設定
+https://typescript-jp.gitbook.io/deep-dive/type-system/functions#opushonparamta
+
+constructore(x?: number, y?: number){
+  this.x = x;
+  this.y = y;
+}
+
+let point = new Point();
+
+-----------------------------------
+アクセス制御
+private: only accessible within class
+https://www.typescriptlang.org/docs/handbook/2/classes.html#private
+
+public: クラスメソッドにつけると冗長になるので避ける
+
+
+1:11:18
+access modifier in constructor parameter
+constructor(private x?: number, prpivate y?: number){
+  //フィールド名と同じであれば自動で認識する↓以下が不要
+  //this.x = x;
+  //this.y = y;
+}
+
+--------------------------------------

@@ -1,0 +1,70 @@
+51:18
+arrow fanction　≒　c# ラムダ式　（参考Java:
+https://engineer-club.jp/java-lambda-expression）
+JS
+let log = function(message) {
+  console.log(message);
+}
+TS
+
+let log = (message) => {
+  console.log(message);
+}
+or 一行の場合ブロック省略可能
+let log = (message) =>  console.log(message);　　
+let log = () =>  console.log();
+
+５２：５９
+複数のパラメータを渡す　＜　インラインアノテーション　＜　インターフェースオブジェクト（カスタム　タイプオブジェクト）
+
+インターフェース Java/C#
+= オブジェクトの形
+Ⓜ︎インターフェース　≒　あくまでも宣言　ブロック内にアルゴリズムを記載できない(シグニャー(?)JSに伝えるのみ)=>クラスに全て含めて定義
+
+                     インラインアノテーション
+let drawPoint = (point: {x: number, y:number}) => {
+=>
+----------------
+interface Point {
+  x: number,
+  y: number,
+  Ⓜ︎↑
+  //x,yは同じ関数内なので引数で渡さなくても使用できる
+  //実装は不可
+  drow: () => void//値を返却しない　　
+}
+let drawPoint = (point: Point) => {
+
+}
+
+→          2オブジェクト=２点間の距離 ↓ pointと関連あるが各々は独立している
+let getDistance = (pointA: Point, pointB: Point) => {　　　||
+                                              1ユニットである必要＝クラス
+}
+
+drawPoint({
+  x: 1,
+  x: 2
+})
+-------------------
+Cohesion
+関連するオブジェクトは１ユニットである必要がある
+    クラス
+
+---
+↑
+---
+＝＞
+class Point {
+  x: number;//「;」でフィールドに
+  y: number;
+
+  drow: () {
+    //...
+  }
+  getDistance(another: Point) {
+
+  }
+}
+-------
+1:01:26

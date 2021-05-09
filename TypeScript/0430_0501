@@ -1,0 +1,80 @@
+プロパティ
+1:12:58
+クラス内メンバーの値取得方法２つ　(1. 2.)
+class Point {
+  constructor (private x?: number, private y?: number){
+  }
+  draw() {
+    console.log('x: ' + this.x + ', Y: ' + this.y);
+  }
+
+ 1. private修飾子が付されたメンバーのゲッターをクラス内に設置し、
+  外から呼び出して値を取得する。
+
+  getX(){
+    return this.x;
+  }
+
+}
+let point = new Point(1,2);
+let x = point.getX();
+point.draw();
+
+
+  2.
+
+  getX(){
+    return this.x;
+  }
+  ①
+  setX(value){
+    if (value < 0)
+      trow new Error('value cannot be les than 0.');
+
+      this.x = value;
+  }
+  let x = point.getX();
+  point.setX(10);
+
+  =>　①の様な使い方をするためにプロパティの概念がある
+  オブジェクト指向言語で使用される定義
+  ゲッター,セッターを用いてこれらの関数をメンバーの様に扱うことができる
+  ※扱いはメンバーの様だが、内部的にはメソッドの働き
+
+get X(){
+  return this.x;
+}
+set X(value) {
+  if (value < 0)
+    trow new Error('value cannot be les than 0.');
+
+    this.x = value;
+}
+point.X = 10;
+
+get set のあとにゲッター、セッター名(≒フィールド名)
+
+ゲッターの値変更、セッターでの値取得→エラー
+
+-------------------------
+JS TSではフィールドは基本キャメルケースを使用
+キャメルケース　　スタート小文字以降大文字
+->
+名前の衝突
+->
+避ける
+プレフィックス　　_　　←　パラメータにつける
+--------------------------
+？？f２　x で両方のメソッドを小文字に直す
+
+
+モジュール
+1:18:15
+
+クラスを別ファイルにして再利用
+各ファイル　＝ module
+export class
+ ↑　外から呼び出せる　つけるとモジュールとなる
+
+ import { } from './point'
+                  module名

@@ -1,0 +1,81 @@
+TS長所
+http://www.tohoho-web.com/ex/typescript.html
+・型の異なる関数呼び出しや代入をコンパイル時に検出することによりプログラムの品質を高めることができる
+・ECMAScript の最新機能を早めに取り入れるため、ブラウザがまだ未対応の機能を早い時期から使用することが可能
+-----------------------------追記4/28
+TypeScriptコンパイラが必要
+node.jsに同梱されているnpmコマンドを使ってインストール
+34:59
+first ts program
+$ sodo npm install -g TypeScript (グローバル)
+$ tsc --version
+
+Version 4.2.4
+
+$ mkdir
+$ cd
+$ code main.ts   <-
+//jsでかく 36:10
+function log(message){
+  console.log(message);
+}
+//.jsファイル作成
+$ tsc main.ts
+TypeScript Compile 同階層に.tsができる
+
+$ code main.js //open file
+$ node main.js
+jsファイル実行
+
+
+ts
+2015 ES6
+ES２０１６　let
+var {for(){} 関数内ok} 　
+<->
+let error
+
+error発生しても自動修正→コンパイルされる
+--------------------
+<- code commandの登録
+vscodeのコマンド ⌘+Shift+P  shell と入力-> 「Shell Command: Install 'code' command in PATH」
+
+--------------------
+型アノテーション
+変数、定数、関数、引数などの後ろに 「: 型名」を指定することで型を宣言する
+tsでのenum
+Ⓜ︎enum 定数をひとまとめにする
+例）
+const ColorRed = 0;
+const ColoreGreen = 1;
+const ColorBlue = 2;
+    ↓＝
+              将来的に、間にデータが追加されるなどの事態が起きた場合、以降のenum要素のvalue（=数値）が変更されプログラムが壊れる可能性がある為、数値を明示した方が良い。　　↓
+enum 名前Color{Red=0, Green=1 ,Blue=2,,,}
+                ↑自動的に「０」
+let v_enum: Color = Color.Green;
+
+
+
+jsのenum-> 連想配列　var   ={key: value, }  => Typeアノテーション
+            https://techacademy.jp/magazine/32582
+var Color;
+(function(Color){
+  Color[Color["Red"] = 0] = "Red";
+  :
+  :
+})(Color || (Color = {}));
+
+
+48:33
+型アサーション == tscにタイプを伝えることが目的であり、キャストではない
+let -Type any- = (<string>message),endsWith('c');
+or
+(message as string)
+
+追記：http://www.tohoho-web.com/ex/typescript.html
+インターフェースオブジェクトの場合
+<Person>{}
+{}as Parson
+
+---------------------
