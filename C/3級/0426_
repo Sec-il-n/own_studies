@@ -1,0 +1,23 @@
+isdigit
+isxdigit
+https://programming-place.net/ppp/contents/c/appendix/reference/isalpha.html
+isalpha　　英字であれば 0以外を返す　
+isupper/islower   大文字/小文字のアルファベットかどうか
+
+--------------------
+
+switch（str[i]）{
+  case 'A':
+  case 'B':
+    ~
+    break
+}
+
+  ↑の場合'B'が実行される
+
+ ---------------------
+
+％-5s
+左寄せ
+%3s
+3<文字数　->　全て空白で出力される

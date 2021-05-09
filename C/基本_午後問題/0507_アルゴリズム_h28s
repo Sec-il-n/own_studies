@@ -1,0 +1,17 @@
+max-1が実際の個数
+data[datamax]>index now:datalen
+6hello!
+memo[memomax] now:memocntから追加
+頭のindex==datalen+1-1=datalenから追加
+
+i=memo[] memo[i]からi回
+pos=pos＋１
+
+４
+＋０〜３
+ 1 2 3 4
+----------------------------------
+タイムオーバー（中断　答え合わせ後やり直し）
+
+目を閉じる
+紙に書く
