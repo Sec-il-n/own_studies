@@ -1,0 +1,93 @@
+1.PHPの変数
+2.未定義値、NULL値、未定義値の確認関数
+3.フォームの作成
+4.callback型と可変関数、言語構造
+5.オブジェクトインスタンスの受け渡し
+6.
+
+
+1.
+定義済み
+$_Server
+
+$ 可変変数
+
+2.
+未定義値*!isset()=>undefind variable
+$var=NULL
+!isset(), is_null(),
+　↕︎
+isset()
+defined variable & not null
+https://www.php.net/manual/ja/function.isset.php
+
+値が空であることを確認
+empty()
+
+3.フォーム
+https://www.php.net/manual/ja/tutorial.forms.php
+
+===================================================
+4.コールバック
+https://www.php.net/manual/ja/language.types.callable.php
+call_user_func(ユーザーが定義するコールバック関数())
+
+https://www.php.net/manual/ja/functions.variable-functions.php
+
+Ⓜ︎言語構造≠関数
+言語構造は可変関数でコールバックできない
+＝
+可変関数は、echo, print, isset(), empty(), include, require のような
+言語構造と組み合わせて使用できない
+※ラッパー関数を使う
+　　⬇︎
+可変関数の概念（機能）
+変数（）    の形であれば
+　↑この値が何であろうと同名の関数を探し呼出す
+$ func = 'bar';
+$func('test');  //calls bar()
+
+言語構造の例
+ array(), echo, empty(), eval(), exit(), isset(), list(), print, unset()
+
+✔︎　？？例4 複雑な callable　配列のポインタの問題？
+
+---------------------------------------------------
+5.オブジェクトインスタンスの受け渡し
+関数（array(オブジェクト、メソッド名)）;
+
+//object method calls
+call_user_func(array($obj, 'callbackMethod'));
+
+//静的クラスオブジェクト
+call_user_func(array('ClassName', 'callbackMethod'));
+or
+call_user_func('ClassName::callbackMethod');
+
+6.静的クラスメソッドでは無名関数*、アロー関数**をパラメータとして渡すことができる
+無名関数*の代入
+https://www.php.net/manual/ja/functions.anonymous.php
+
+$greet = function($name)
+{
+  printf("Hello %s\r\n", $name)
+};
+
+$greet('World');
+$greet('PHP');
+
+ーーーーーーーーーーーーーーーーーーーーー
+MEMO:　
+array()
+https://www.php.net/manual/ja/function.array.php
+Ⓜ︎アロー関数でkey(インデックス),valueを配列に　→後の定義が保持される
+
+
+改行　　
+キャリッジリターン　\r, ラインフィード　\n
+  mac CR
+  Linux UNIX LF
+  Win CR + LF
+
+次回
+✔︎　クロージャ

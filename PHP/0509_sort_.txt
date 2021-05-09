@@ -1,0 +1,42 @@
+usort(array &$array, callable $callback):bool　ユーザー定義の比較関数により配列をその値でソート
+https://www.php.net/manual/ja/function.usort.php
+
+callback(mixed $a, mixed $b): int
+
+rsort(array &$array, int $flags = SORT_REGULAR) :bool
+配列を逆順に(高位から低位に)ソート
+cf.
+比較結果が等しくなる二つの要素=>順不定
+
+flags
+ 1.SORT_REGULAR 通常
+ 2.SORT_NUMERIC
+ 3.SORT_STRING
+ 4.SORT_LOCALE_STRING
+ 5.SORT_FLAG_CASE   3+4(bitOR)
+
+
+-------------------------------------
+foreach(iterable_expression ,as $value)
+foreach(iterable_expression ,as $key => $value)
+         ↑反復可能な値
+https://www.php.net/manual/ja/control-structures.foreach.php
+
+・使えるのは配列とオブジェクトだけ
+・ループの中で配列の要素を直接変更したい場合　＊$valueの前に「&」=>リファレンスが代入される
+
+＊代入する変数(ソース変数)の先頭に アンパサンドをつける
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+リファレンス＝参照による代入
+同じ変数の内容を異なった名前で コールすること
+
+新規の変数は元の変数を参照する　シンボルテーブルのエイリアス
+＝元の変数の"エイリアスを作る"
+＝元の変数を"指す"
+Ⓜ︎新規の変数への代入は、元の変数に影響し、その逆も同様
+
+https://www.php.net/manual/ja/language.references.whatare.php#122978
+元のデータ(代入された内容)は全てのリファレンス付き変数（エイリアス）が削除されるまで残る
+＝内容が削除されていない変数の内容は残る
+
+エイリアスを削除せずに元データの内容を消す場合はNULLを代入する
